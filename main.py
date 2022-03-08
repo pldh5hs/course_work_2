@@ -1,4 +1,4 @@
-from flask import Flask, request, render_template, send_from_directory
+from flask import Flask, request, render_template
 import utils
 
 app = Flask(__name__)
@@ -28,4 +28,5 @@ def user(user_name):
     posts = utils.get_posts_by_user(user_name)
     return render_template("user-feed.html", posts=posts)
 
-app.run()
+if __name__ == '__main__':
+    app.run()
